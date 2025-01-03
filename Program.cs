@@ -2,17 +2,28 @@
 class Test{
     public static void Main(String[] args) {
 
-      int number;
-      Console.WriteLine("Enter a number between 1 to 10");
-      number = Convert.ToInt32(Console.ReadLine());
-      string message = number switch{
-         int num when num < 1 || num > 10 => "number is out of range",
-         int num when num%2==0 => "Even",
-         int num when num%2!=0 => "odd",
-         _ => "default"
-
-      };
-      Console.WriteLine(message);
+    //   Fahrenheit and celsius project 1
+    Console.WriteLine("Temperature Converter start:");
+    Console.WriteLine("1. Celsius to Fahrenheit");
+    Console.WriteLine("2. Fahrenheit to Celsius");
+    int choose = Convert.ToInt32(Console.ReadLine());
+    switch(choose){
+        case 1: 
+            Console.WriteLine("Enter celsius:");
+            double celsius = Convert.ToDouble(Console.ReadLine());
+            double fahrenheit = (celsius * 9 / 5) + 32;
+            Console.WriteLine($"Fahrenheit is {fahrenheit:F2}");
+            break;
+        case 2: 
+            Console.WriteLine("Enter Fahrenheit:");
+            double fahrenheit1 = Convert.ToDouble(Console.ReadLine());
+            double celsiusRes = (fahrenheit1 -32)/1.8;
+            Console.WriteLine($"Celsius is {celsiusRes:F2}");
+            break;
+        default:
+            Console.Write("Invalid choose\n");
+            break;
+    }
 
 
     }
