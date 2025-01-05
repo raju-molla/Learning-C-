@@ -3,21 +3,28 @@
 class Person{
     public string name;
     public int age;
+    public void SetValue(string setName, int setAge){
+        name = setName;
+        age = setAge;
+    }
+    public void Display(){
+        Console.WriteLine($"Name: {name}, Age: {age}");
+    }
 }
 class Test
 {
     public static void Main(String[] args)
     {
         Person p1 = new Person();
-        p1.name = "Raju Molla";
-        p1.age = 25;
+        p1.SetValue("RajuMolla", 25);
+        p1.Display();
 
-        Console.WriteLine($"Name: {p1.name} and Age: {p1.age}");
 
         Person p2 = new Person();
-        p2.name = "Rijvi";
-        p2.age = 24;
-        Console.WriteLine($"Name: {p2.name} and Age: {p2.age}");
+        p2.SetValue("Rijvi", 30);
+        p2.Display();
+
+       
 
        
     }
